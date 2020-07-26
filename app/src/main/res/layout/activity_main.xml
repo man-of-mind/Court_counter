@@ -1,101 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_width="match_parent">
+<LinearLayout
+
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:orientation="vertical"
+        android:layout_weight="1">
 
     <TextView
         android:id="@+id/teamA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:padding="16dp"
         android:gravity="center_horizontal"
         android:text="@string/team_a"
-        android:textColor="#000"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#616161"
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/team_a_score"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:paddingBottom="24dp"
         android:gravity="center_horizontal"
         android:text="@string/initial"
+        android:fontFamily="sans-serif-light"
         android:textColor="#000"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/teamA" />
+        android:textSize="56sp"/>
 
     <Button
         android:id="@+id/three_point"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="#FFA"
         android:onClick="displayThreePoints"
+        android:paddingBottom="8dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
         android:text="@string/three_points"
-        android:padding="8dp"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/team_a_score" />
+        android:textSize="20sp"
+        android:layout_margin="4dp"/>
 
     <Button
         android:id="@+id/two_point"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="#FFA"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
         android:onClick="displayTwoPoints"
         android:text="@string/two_points"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/three_point" />
+        android:layout_margin="4dp"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/free_throw"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="#FFA"
+        android:paddingTop="8dp"
+        android:paddingEnd="24dp"
+        android:paddingStart="24dp"
         android:onClick="displayFreeThrow"
         android:text="@string/free_throw"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/two_point" />
+        android:layout_margin="4dp"
+        android:textSize="20sp" />
 
+
+    </LinearLayout>
+
+  <!--  <view
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/darker_gray"/>-->
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/teamB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:gravity="center_horizontal"
+            android:text="Team B"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#616161"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/team_b_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="24dp"
+            android:gravity="center_horizontal"
+            android:text="@string/initial"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#000"
+            android:textSize="56sp"/>
+
+        <Button
+            android:id="@+id/threeB_point"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:onClick="displayThreeBPoints"
+            android:paddingBottom="8dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:text="@string/three_points"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/twoB_point"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:onClick="displayTwoBPoints"
+            android:paddingRight="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="@string/two_points"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/freeB_throw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:onClick="displayFreeThrowB"
+            android:paddingTop="8dp"
+            android:paddingEnd="24dp"
+            android:paddingStart="24dp"
+            android:text="@string/free_throw"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+</LinearLayout>
     <Button
         android:id="@+id/reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#FFA"
+        android:layout_margin="8dp"
         android:onClick="reset"
         android:text="@string/reset_value"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textSize="20sp"
+        android:layout_marginBottom="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>
